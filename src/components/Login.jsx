@@ -10,6 +10,7 @@ const Login = () => {
 
    const [email, setEmail] =useState("modi123@gmail.com");
    const [password, setPassword] = useState("Modi@123");
+   const [error, setError] = useState("");
    const dispatch = useDispatch();
    const navigate = useNavigate();
 
@@ -27,6 +28,7 @@ const Login = () => {
      
     }
     catch(err){
+      setError(err?.response?.data || 'something went wrong');
       console.log(err)
     }
    }
@@ -85,7 +87,7 @@ const Login = () => {
                 />
               </div>
             </div>
-
+            <p className="text-red-500 text-sm/6">{error}</p>
             <div>
               <button
                 type="submit"
