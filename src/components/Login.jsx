@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { BASE_URL } from '../utils/constants';
 
 
@@ -101,9 +101,9 @@ const Login = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Don't have an Account ?{' '}
-            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <Link to="/signup" className="font-semibold text-indigo-600 hover:text-indigo-500">
               Signup
-            </a>
+            </Link>
           </p>
         </div>
       </div>

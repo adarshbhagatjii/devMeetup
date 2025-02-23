@@ -47,7 +47,7 @@ const EditProfile = () => {
       setGender(userData.gender);
       setAge(userData.age);
       setBio(userData.bio);
-      setImageUrl(userData.imageUrl);
+      setImageUrl(userData.imageUrl || null);
     } catch (err) {
       console.log("Failed to load user data.");
     }
@@ -74,78 +74,39 @@ const EditProfile = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-3">
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex h-auto w-96 flex-1 flex-col justify-center mt-2 px-1.5 py-1.5 lg:px-8 bg-gray-800 rounded-xl shadow-xl">
-            <h2 className="text-center text-2xl font-bold text-indigo-600">Edit your profile</h2>
-            <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
-              <div>
-                <label className="block text-sm font-medium text-gray-500">First Name</label>
-                <input
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="block w-full rounded-md bg-gray-400 px-1.5 py-1.5 text-base text-gray-800 outline-none placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-500">Last Name</label>
-                <input
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  className="block w-full rounded-md bg-gray-400 px-1.5 py-1.5 text-base text-gray-800 outline-none placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-500">Gender</label>
-                <input
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                  className="block w-full rounded-md bg-gray-400 px-1.5 py-1.5 text-base text-gray-800 outline-none placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-500">Age</label>
-                <input
-                  type="number"
-                  value={age}
-                  onChange={(e) => setAge(Number(e.target.value))}
-                  className="block w-full rounded-md bg-gray-400 px-1.5 py-1.5 text-base text-gray-800 outline-none placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-500">Bio</label>
-                <input
-                  value={bio}
-                  onChange={(e) => setBio(e.target.value)}
-                  className="block w-full rounded-md bg-gray-400 px-1.5 py-1.5 text-base text-gray-800 outline-none placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-500">Image URL</label>
-                <input
-                  value={imageUrl}
-                  onChange={(e) => setImageUrl(e.target.value)}
-                  className="block w-full rounded-md bg-gray-400 px-1.5 py-1.5 text-base text-gray-800 outline-none placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
-                />
-              </div>
-
-              <p className="text-red-500 text-sm">{error}</p>
-              <div className="mt-5 mb-5">
-                <button
-                  onClick={saveUpdate}
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-1.5 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus:outline-indigo-600"
-                >
-                  Save
-                </button>
-                <ToastContainer />
-              </div>
+      <div className="flex flex-col items-center justify-center p-4 sm:p-8 md:flex-row md:gap-6">
+      <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-xl p-4">
+        <h2 className="text-center text-2xl font-bold text-indigo-600">Edit your profile</h2>
+        <div className="mt-4 space-y-3">
+          {[{ label: "First Name", value: firstName, setter: setFirstName },
+            { label: "Last Name", value: lastName, setter: setLastName },
+            { label: "Gender", value: gender, setter: setGender },
+            { label: "Age", value: age, setter: (val) => setAge(Number(val)) },
+            { label: "Bio", value: bio, setter: setBio },
+            { label: "Image URL", value: imageUrl, setter: setImageUrl }].map((field, index) => (
+            <div key={index}>
+              <label className="block text-sm font-medium text-gray-500">{field.label}</label>
+              <input
+                value={field.value}
+                onChange={(e) => field.setter(e.target.value)}
+                className="w-full rounded-md bg-gray-400 px-2 py-1 text-gray-800 placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
+              />
             </div>
-          </div>
+          ))}
+          <p className="text-red-500 text-sm">{error}</p>
+          <button
+            onClick={saveUpdate}
+            className="w-full rounded-md bg-indigo-600 px-2 py-2 text-white font-semibold hover:bg-indigo-500 focus:outline-none"
+          >
+            Save
+          </button>
         </div>
-        <div>
-          <UserCard user={{ firstName, lastName, age, gender, bio, imageUrl }} />
-        </div>
+        <ToastContainer />
       </div>
+      <div className="mt-6 md:mt-0">
+        <UserCard user={{ firstName, lastName, age, gender, bio, imageUrl }} />
+      </div>
+    </div>
     </>
   );
 };
