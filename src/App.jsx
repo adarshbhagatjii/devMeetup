@@ -10,6 +10,7 @@ import Feed from './components/Feed';
 import Profile from './components/Profile';
 import Connection from './components/Connection';
 import Request from './components/Request';
+import ForgotPassword from './components/ForgotPassword';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/connection" element={<Connection />} />
             <Route path="/request" element={<Request />} />
             

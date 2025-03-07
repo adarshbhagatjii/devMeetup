@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import UserCard from "./USerCard";
 import { toast, ToastContainer } from "react-toastify";
+import avatar from '../assets/avatar.png'
 
 const EditProfile = () => {
   const dispatch = useDispatch();
@@ -104,7 +105,22 @@ const EditProfile = () => {
         <ToastContainer />
       </div>
       <div className="mt-6 md:mt-0">
-        <UserCard user={{ firstName, lastName, age, gender, bio, imageUrl }} />
+        <div className="card w-80 bg-base-300 p-4 rounded-md flex flex-col items-center mx-3  mt-10 shadow-lg">
+                <div className='w-[90%] h-50 bg-orange-600 rounded-md overflow-hidden'>
+                {imageUrl ? (
+                <img src={imageUrl} alt="User Avatar" className="w-full h-full rounded-xl object-cover" />
+              ) : (
+                <img src={avatar} alt="Default Avatar" className="w-full h-full rounded-xl object-cover" />
+              )}
+                
+                </div>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">{firstName+ ' '+ lastName}</h2>
+            <h2 className="card-title">{age +' '+gender}</h2>
+            <p>{bio}</p>
+          </div>
+        </div>
+        {/* <UserCard user={{ firstName, lastName, age, gender, bio, imageUrl }} /> */}
       </div>
     </div>
     </>
