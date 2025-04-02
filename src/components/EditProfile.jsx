@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import UserCard from "./USerCard";
 import { toast, ToastContainer } from "react-toastify";
 import avatar from '../assets/avatar.png'
 
