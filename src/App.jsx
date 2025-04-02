@@ -11,6 +11,7 @@ import Profile from './components/Profile';
 import Connection from './components/Connection';
 import Request from './components/Request';
 import ForgotPassword from './components/ForgotPassword';
+import Chat from './components/Chat';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/connection" element={<Connection />} />
             <Route path="/request" element={<Request />} />
+            <Route path="/chat/:targetUserId" element={<Chat />} />
             
           </Route>
         </Routes>

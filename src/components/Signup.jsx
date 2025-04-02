@@ -50,9 +50,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
-      <div className="w-96 p-8 bg-gray-800 rounded-xl shadow-xl">
-        <h2 className="text-center text-2xl font-bold text-indigo-600">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 ">
+      <div className="w-96 p-8 bg-gray-300 rounded-xl shadow-2xl mb-20 mt-10">
+        <h2 className="text-center text-2xl font-bold text-gray-600">
           {showOtpInput ? "Verify OTP" : "Create an Account"}
         </h2>
 
@@ -67,7 +67,7 @@ const Signup = () => {
                   type="text"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-indigo-600"
+                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
                 />
               </div>
 
@@ -79,7 +79,7 @@ const Signup = () => {
                   type="text"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-indigo-600"
+                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
                 />
               </div>
 
@@ -92,7 +92,7 @@ const Signup = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-indigo-600"
+                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
                 />
               </div>
 
@@ -105,7 +105,7 @@ const Signup = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-indigo-600"
+                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
                 />
               </div>
 
@@ -113,14 +113,14 @@ const Signup = () => {
 
               <button
                 onClick={handleSignup}
-                className="w-full mt-4 bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-500"
+                className="w-full mt-4 bg-gray-600 text-white py-2 rounded-md hover:bg-gray-700"
               >
                 Sign Up
               </button>
 
               <p className="mt-4 text-center text-sm text-gray-500">
                 Already have an account?{" "}
-                <Link to="/login" className="text-indigo-600 hover:text-indigo-500">
+                <Link to="/login" className="text-gray-600 hover:text-gray-700">
                   Log in
                 </Link>
               </p>
@@ -135,7 +135,7 @@ const Signup = () => {
                   type="text"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-indigo-600"
+                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
                 />
               </div>
 

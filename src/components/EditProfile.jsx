@@ -76,8 +76,8 @@ const EditProfile = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center p-4 sm:p-8 md:flex-row md:gap-6">
-      <div className="w-full max-w-md bg-gray-800 rounded-xl shadow-xl p-4">
-        <h2 className="text-center text-2xl font-bold text-indigo-600">Edit your profile</h2>
+      <div className="w-full max-w-md bg-gray-200 rounded-xl shadow-xl p-4 mb-10">
+        <h2 className="text-center text-2xl font-bold text-gray-700">Edit your profile</h2>
         <div className="mt-4 space-y-3">
           {[{ label: "First Name", value: firstName, setter: setFirstName },
             { label: "Last Name", value: lastName, setter: setLastName },
@@ -86,18 +86,18 @@ const EditProfile = () => {
             { label: "Bio", value: bio, setter: setBio },
             { label: "Image URL", value: imageUrl, setter: setImageUrl }].map((field, index) => (
             <div key={index}>
-              <label className="block text-sm font-medium text-gray-500">{field.label}</label>
+              <label className="block text-sm font-medium text-gray-600">{field.label}</label>
               <input
                 value={field.value}
                 onChange={(e) => field.setter(e.target.value)}
-                className="w-full rounded-md bg-gray-400 px-2 py-1 text-gray-800 placeholder-gray-400 focus:outline-indigo-600 sm:text-sm"
+                className="w-full rounded-md bg-gray-200 px-2 py-1 text-gray-700 placeholder-gray-400 focus:outline-gray-600 sm:text-sm"
               />
             </div>
           ))}
           <p className="text-red-500 text-sm">{error}</p>
           <button
             onClick={saveUpdate}
-            className="w-full rounded-md bg-indigo-600 px-2 py-2 text-white font-semibold hover:bg-indigo-500 focus:outline-none"
+            className="w-full rounded-md bg-gray-600 px-2 py-2 text-white font-semibold hover:bg-gray-700 focus:outline-none"
           >
             Save
           </button>
@@ -106,7 +106,7 @@ const EditProfile = () => {
       </div>
       <div className="mt-6 md:mt-0">
         <div className="card w-80 bg-base-300 p-4 rounded-md flex flex-col items-center mx-3  mt-10 shadow-lg">
-                <div className='w-[90%] h-50 bg-orange-600 rounded-md overflow-hidden'>
+                <div className='w-[90%] h-50 bg-gray-500-600 rounded-md overflow-hidden'>
                 {imageUrl ? (
                 <img src={imageUrl} alt="User Avatar" className="w-full h-full rounded-xl object-cover" />
               ) : (

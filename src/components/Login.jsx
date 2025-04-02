@@ -35,9 +35,9 @@ const Login = () => {
 
 
   return (
-    <div className='flex flex-col items-center justify-center '>
-      <div className="flex h-auto w-96 flex-1 flex-col justify-center  px-6 py-12 lg:px-8 bg-gray-800 rounded-xl shadow-xl">
-      <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-indigo-600">
+    <div className='flex flex-col items-center justify-center bg-gray-100 '>
+      <div className="flex h-auto w-96 flex-1 flex-col justify-center mt-10 mb-20 bg-gray-300 rounded-xl shadow-2xl px-6 py-12 lg:px-8 ">
+      <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-800">
             Login to your account
           </h2>
 
@@ -58,7 +58,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                  
-                  className="block w-full rounded-md bg-gray-400 px-3 py-1.5 text-base text-gray-500 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-gray-400 px-3 py-1.5 text-base text-gray-500 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-900 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -69,7 +69,7 @@ const Login = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <Link to='/forgotpassword' className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <Link to='/forgotpassword' className="font-semibold text-gray-600 hover:text-gray-500">
                     Forgot password?
                   </Link>
                 </div>
@@ -83,7 +83,7 @@ const Login = () => {
                   autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full rounded-md bg-gray-400 px-3 py-1.5 text-base text-gray-500 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-gray-400 px-3 py-1.5 text-base text-gray-500 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-900 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -92,7 +92,7 @@ const Login = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
               >
                 Login
               </button>
@@ -101,7 +101,7 @@ const Login = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Don't have an Account ?{' '}
-            <Link to="/signup" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <Link to="/signup" className="font-semibold text-gray-600 hover:text-gray-700">
               Signup
             </Link>
           </p>

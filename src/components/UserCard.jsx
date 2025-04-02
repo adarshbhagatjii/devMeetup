@@ -21,7 +21,7 @@ const UserCard = ({user}) => {
     }
   return (
     <div className="card w-80 bg-base-300 p-4 rounded-md flex flex-col items-center mx-3  mt-10 shadow-lg">
-        <div className='w-[90%] h-50 bg-orange-600 rounded-md overflow-hidden'>
+        <div className='w-[90%] h-50 bg-gray-600 rounded-md overflow-hidden'>
         {imageUrl ? (
         <img src={imageUrl} alt="User Avatar" className="w-full h-full rounded-xl object-cover" />
       ) : (
@@ -34,7 +34,7 @@ const UserCard = ({user}) => {
     <h2 className="card-title">{age +' '+gender}</h2>
     <p>{bio}</p>
     <div className=" flex gap-2 ">
-    <button className="btn btn-primary" onClick={()=>handelSendRequest("ignored", _id)}>Ignore</button>
+    <button className="btn btn-primary bg-gray-600" onClick={()=>handelSendRequest("ignored", _id)}>Ignore</button>
       <button className="btn btn-primary bg-pink-600" onClick={()=>handelSendRequest("interested", _id)}>Interested</button>
       
     </div>
