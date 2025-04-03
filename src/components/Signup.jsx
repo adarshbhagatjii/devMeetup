@@ -50,108 +50,75 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 ">
-      <div className="w-96 p-8 bg-gray-300 rounded-xl shadow-2xl mb-20 mt-10">
-        <h2 className="text-center text-2xl font-bold text-gray-600">
-          {showOtpInput ? "Verify OTP" : "Create an Account"}
-        </h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+  <div className="w-full max-w-md p-8 bg-gray-300 rounded-xl shadow-2xl mb-20 mt-10">
+    <h2 className="text-center text-2xl font-bold text-gray-700">
+      {showOtpInput ? "Verify OTP" : "Create an Account"}
+    </h2>
 
-        <div className="mt-6">
-          {!showOtpInput ? (
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-500">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-500">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-500">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-500">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
-                />
-              </div>
-
-              {error && <p className="text-red-500 text-sm">{error}</p>}
-
-              <button
-                onClick={handleSignup}
-                className="w-full mt-4 bg-gray-600 text-white py-2 rounded-md hover:bg-gray-700"
-              >
-                Sign Up
-              </button>
-
-              <p className="mt-4 text-center text-sm text-gray-500">
-                Already have an account?{" "}
-                <Link to="/login" className="text-gray-600 hover:text-gray-700">
-                  Log in
-                </Link>
-              </p>
+    <div className="mt-6">
+      {!showOtpInput ? (
+        <div className="space-y-4">
+          {[
+            { label: "First Name", type: "text", value: firstName, setter: setFirstName },
+            { label: "Last Name", type: "text", value: lastName, setter: setLastName },
+            { label: "Email Address", type: "email", value: email, setter: setEmail },
+            { label: "Password", type: "password", value: password, setter: setPassword },
+          ].map((field, index) => (
+            <div key={index}>
+              <label className="block text-sm font-medium text-gray-600">{field.label}</label>
+              <input
+                type={field.type}
+                value={field.value}
+                onChange={(e) => field.setter(e.target.value)}
+                required
+                className="w-full mt-2 rounded-md bg-gray-400 px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-600"
+              />
             </div>
-          ) : (
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-500">
-                  Enter OTP
-                </label>
-                <input
-                  type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  className="w-full mt-2 rounded-md bg-gray-400 px-3 py-1.5 text-gray-900 focus:outline-gray-900"
-                />
-              </div>
+          ))}
 
-              {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className="text-red-500 text-sm">{error}</p>}
 
-              <button
-                onClick={handleVerifyOtp}
-                className="w-full mt-4 bg-green-600 text-white py-2 rounded-md hover:bg-green-500"
-              >
-                Verify OTP
-              </button>
-            </div>
-          )}
+          <button
+            onClick={handleSignup}
+            className="w-full mt-4 bg-gray-700 text-white py-2 rounded-md hover:bg-gray-800 transition"
+          >
+            Sign Up
+          </button>
+
+          <p className="mt-4 text-center text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link to="/login" className="text-gray-700 font-semibold hover:text-gray-900">
+              Log in
+            </Link>
+          </p>
         </div>
-      </div>
+      ) : (
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-600">Enter OTP</label>
+            <input
+              type="text"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              className="w-full mt-2 rounded-md bg-gray-400 px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            />
+          </div>
+
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+
+          <button
+            onClick={handleVerifyOtp}
+            className="w-full mt-4 bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
+          >
+            Verify OTP
+          </button>
+        </div>
+      )}
     </div>
+  </div>
+</div>
+
   );
 };
 

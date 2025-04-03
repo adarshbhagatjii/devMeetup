@@ -20,7 +20,7 @@ const UserCard = ({user}) => {
         }
     }
   return (
-    <div className="card w-80 bg-base-300 p-4 rounded-md flex flex-col items-center mx-3  mt-10 shadow-lg">
+    <div className="card w-80 bg-base-300 p-4 rounded-md flex flex-col items-center mx-3  mt-18 shadow-lg  ">
         <div className='w-[90%] h-50 bg-gray-600 rounded-md overflow-hidden'>
         {imageUrl ? (
         <img src={imageUrl} alt="User Avatar" className="w-full h-full rounded-xl object-cover" />

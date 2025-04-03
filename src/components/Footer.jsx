@@ -2,11 +2,12 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-300 text-base-content p-4 fixed bottom-0">
-  <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by Dev Tinder Industries Ltd</p>
+    <footer className="w-full bg-base-300 text-base-content p-4 fixed bottom-0 flex justify-center items-center">
+  <aside className="text-center text-sm md:text-base ">
+    <p>Copyright © {new Date().getFullYear()} - All rights reserved by Dev Tinder Industries Ltd</p>
   </aside>
 </footer>
+
   );
 };
 
