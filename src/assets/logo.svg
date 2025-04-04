@@ -1,0 +1,22 @@
+<svg width="260" height="60" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hugging Two People Icon -->
+  <g transform="translate(20, 30)">
+    <!-- Person 1 (Gray) -->
+    <circle cx="20" cy="10" r="10" fill="#6B7280"/>
+    <path d="M10 30 C10 20, 30 20, 30 30 C30 40, 10 40, 10 30 Z" fill="#6B7280"/>
+
+    <!-- Person 2 (Black) -->
+    <circle cx="40" cy="10" r="10" fill="#000000"/>
+    <path d="M30 30 C30 20, 50 20, 50 30 C50 40, 30 40, 30 30 Z" fill="#000000"/>
+
+    <!-- Hugging Arms -->
+    <path d="M20 30 C22 35, 38 35, 40 30" stroke="#6B7280" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Dev Text (Gray) -->
+  <text x="90" y="75" font-family="Segoe UI, sans-serif" font-size="48" fill="#6B7280" font-weight="bold">Dev</text>
+
+  <!-- MeetUp Text (Black) -->
+  <text x="220" y="75" font-family="Segoe UI, sans-serif" font-size="48" fill="#000000" font-weight="bold">MeetUp</text>
+</svg>
+
