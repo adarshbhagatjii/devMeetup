@@ -17,10 +17,7 @@ const Chat = () => {
 
 
     const sendMessage = () => {
-        // if (chatInput.trim()) {
-        //     setMessages([...messages, { sender: 'You', text: chatInput }]);
-        //     setChatInput('');
-        // }
+       
         const socket = createSocketConnevtion();
         socket.emit('sendMessage', { firstName: user.firstName, text: chatInput, targetUserId, userId, });
         setChatInput('');
@@ -46,7 +43,7 @@ const Chat = () => {
     }
     useEffect(() => {
         fetchSendMessages();
-    })
+    }, [targetUserId])
 
 
     useEffect(() => {
