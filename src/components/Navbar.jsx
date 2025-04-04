@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-gray-300 shadow-lg">
       <div className="flex-1 ">
-        <a href='/' className="block max-w-[260px]" ><svg className="w-full h-auto hover:bg-gray-200 rounded-lg" viewBox="0 0 460 120" width="260" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href='/'  ><svg className="hover:bg-gray-200 rounded-lg" viewBox="0 0 460 120" width="260" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
 
           <g transform="translate(20, 30)">
 
