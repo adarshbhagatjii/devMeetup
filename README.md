@@ -3,7 +3,7 @@
 DevMeetup is a modern web application built with React and Vite that allows developers to create, view, and manage developer meetups and discussions.
 
 ## Live Demo
-[Visit the site](https://dev-meetup-eight.vercel.app)
+[Visit the site]( https://dev-meetup-client.vercel.app/ )
 
 ## Features
 - User authentication (Login/Signup)
