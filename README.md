@@ -30,6 +30,14 @@ DevMeetup is a modern web application built with React and Vite that allows deve
 - Tailwind CSS
 - Axios
 
+## Backend Repository
+
+The backend code for this project is available here:  
+[Dev_meetUp_Server (Backend Repo)](https://github.com/adarshbhagatjii/Dev_meetUp_Server)
+
+
+*Explore, connect, and collaborate with developers through meetups.*
+
 ## Getting Started
 
 ### Prerequisites
@@ -46,13 +54,7 @@ npm run dev
 
 
 
-## Backend Repository
 
-The backend code for this project is available here:  
-[Dev_meetUp_Server (Backend Repo)](https://github.com/adarshbhagatjii/Dev_meetUp_Server)
-
-
-*Explore, connect, and collaborate with developers through meetups.*
 
 
 
